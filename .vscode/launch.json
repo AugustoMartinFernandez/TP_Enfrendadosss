@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mff27/Desktop/Programando_Enfrendados/src",
-      "program": "c:/Users/mff27/Desktop/Programando_Enfrendados/src/build/Debug/outDebug",
+      "cwd": "c:/Users/mff27/Desktop/Programando_Enfrendados",
+      "program": "c:/Users/mff27/Desktop/Programando_Enfrendados/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
