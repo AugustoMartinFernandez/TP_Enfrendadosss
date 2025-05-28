@@ -44,7 +44,7 @@ bool confirmarSalida()
     }
 }
 
-// Funcion para mostrar titulo y mensaje de cada opcion
+// Funcion para mostrar titulo y mensaje de cada opcion dentro del switch
 void mostrarSeccion(const string titulo, const string mensaje)
 {
     cout << "+=====================================+" << endl;

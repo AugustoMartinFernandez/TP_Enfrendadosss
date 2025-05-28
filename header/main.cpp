@@ -4,13 +4,14 @@
 using namespace std;
 
 int main()
-{
+{   // Variable para guardar nombre del usuario
     string nombre;
     cout << "Ingrese su nombre: ";
+    // Sirve para poner mas caracteres juntos EJ: en ves de Martin pueden poner "Martin Fernandez"
     getline(cin, nombre);
-
+    // Variable para opcion de menu
     int opcionMenu;
-    bool salir = false;
+    bool salir = false; // Inicializamos en False para cuando sea True Salga del menu
 
     cout << "   _______   ____________  _______   ______  ___ \t____  ____  _____\n";
     cout << "  / ____/ | / / ____/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/\n";
