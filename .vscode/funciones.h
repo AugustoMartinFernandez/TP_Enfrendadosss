@@ -11,4 +11,3 @@ bool confirmarSalida();
 void mostrarSeccion(string titulo, string mensaje);
 
 #endif
-

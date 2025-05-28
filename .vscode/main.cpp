@@ -24,11 +24,13 @@ int main()
     cout << "-----------------------------------------------------------------" << endl;
     cout << "Bienvenido, " << nombre << "!" << endl;
 
+    system("pause");  // Pausa después de mostrar bienvenida
+
     do
     {
         cout << endl;
         cout << "+=====================================+" << endl;
-        cout << "|      MENUUU PRINCIPAL DEL JUEGO       |" << endl;
+        cout << "|      MENU PRINCIPAL DEL JUEGO       |" << endl;
         cout << "|-------------------------------------|" << endl;
         cout << "|   1) * Jugar con 2 jugadores        |" << endl;
         cout << "|   2) * Estadisticas                 |" << endl;
@@ -48,6 +50,7 @@ int main()
             mostrarSeccion("Enfrendados de a Dos!!!", "Has seleccionado jugar con 2 jugadores.\n");
 
             string jugador1, jugador2;
+
             cout << "Ingrese el nombre del Jugador 1: ";
             getline(cin, jugador1);
             cout << "Ingrese el nombre del Jugador 2: ";
@@ -56,8 +59,11 @@ int main()
             cout << "\nJugadores listos para jugar:\n";
             cout << "Jugador 1: " << jugador1 << endl;
             cout << "Jugador 2: " << jugador2 << endl;
-            cout << "\nLOGICA DE MIS COMPAS A CODIFICAR!!!\n";
 
+            system("pause");  // Pausa para que el usuario vea los nombres antes de continuar
+
+            cout << "\nLOGICA DE MIS COMPAS A CODIFICAR!!!\n";
+            system("pause");  // Pausa antes de regresar al menú
             break;
         }
         case 2:
@@ -71,9 +77,12 @@ int main()
             break;
         default:
             cout << "Opcion invalida. Intenta de nuevo." << endl;
+            system("pause");  // Pausa para que el usuario vea el mensaje de error
         }
     } while (!salir);
 
     return 0;
 }
+
+
 

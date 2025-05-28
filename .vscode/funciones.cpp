@@ -4,14 +4,14 @@
 
 using namespace std;
 
-char pedirLetra(std::string mensaje)
+char pedirLetra(string mensaje)
 {
     char letra;
-    std::cout << "+---------------------------------------+" << std::endl;
-    std::cout << "|  " << mensaje << "  (S/N):  |" << std::endl;
-    std::cout << "+---------------------------------------+" << std::endl;
-    std::cout << "-> ";
-    std::cin >> letra;
+    cout << "+---------------------------------------+" << endl;
+    cout << "|  " << mensaje << "  (S/N):     |" << endl;
+    cout << "+---------------------------------------+" << endl;
+    cout << "-> ";
+    cin >> letra;
     return letra;
 }
 
@@ -20,31 +20,48 @@ bool confirmarSalida()
     char letra = pedirLetra("Quieres salir del programa?");
     if (letra == 'S' || letra == 's')
     {
-        std::cout << "+---------------------------------------+" << std::endl;
-        std::cout << "|     Saliendo de Enfrendados...        |" << std::endl;
-        std::cout << "+---------------------------------------+" << std::endl;
-        return true; // El usuario confirma que quiere salir
+        // Segunda confirmación
+        char confirmacion = pedirLetra("Estas seguro?");
+        if (confirmacion == 'S' || confirmacion == 's')
+        {
+            cout << "+---------------------------------------+" << endl;
+            cout << "|     Saliendo de Enfrendados...        |" << endl;
+            cout << "+---------------------------------------+" << endl;
+            system("pause");
+            return true; // Confirmo dos veces que quiere salir
+        }
+        else
+        {
+            cout << "+---------------------------------------+" << endl;
+            cout << "|  Salida cancelada. Continuamos...     |" << endl;
+            cout << "+---------------------------------------+" << endl;
+            system("pause");
+            return false; // Cancelo en la segunda confirmación
+        }
     }
     else if (letra == 'N' || letra == 'n')
     {
-        std::cout << "+---------------------------------------+" << std::endl;
-        std::cout << "|No te preocupes seguimos en Enfrendados|" << std::endl;
-        std::cout << "+---------------------------------------+" << std::endl;
-        return false; // El usuario quiere quedarse
+        cout << "+---------------------------------------+" << endl;
+        cout << "|No te preocupes seguimos en Enfrendados|" << endl;
+        cout << "+---------------------------------------+" << endl;
+        system("pause");
+        return false; // No quiere salir
     }
     else
     {
-        std::cout << "+---------------------------------------+" << std::endl;
-        std::cout << "|  Entrada invalida. Preciona 's' o 'n'.|" << std::endl;
-        std::cout << "+---------------------------------------+" << std::endl;
-        return false; // Entrada invalida, se queda en el menu
+        cout << "+---------------------------------------+" << endl;
+        cout << "|  Entrada invalida. Preciona 's' o 'n'.|" << endl;
+        cout << "+---------------------------------------+" << endl;
+        system("pause");
+        return false; // Entrada inválida, no sale
     }
 }
 
-void mostrarSeccion(std::string titulo, std::string mensaje)
+void mostrarSeccion(string titulo, string mensaje)
 {
-    std::cout << "+=====================================+" << std::endl;
-    std::cout << "|------ " << titulo << " -------->" << std::endl;
-    std::cout << "+=====================================+" << std::endl;
-    std::cout << mensaje << std::endl;
+    cout << "+=====================================+" << endl;
+    cout << "|------ " << titulo << " -------->" << endl;
+    cout << "+=====================================+" << endl;
+    cout << mensaje << endl;
+    system("pause"); // Pausa para que el usuario lea la sección antes de continuar
 }
