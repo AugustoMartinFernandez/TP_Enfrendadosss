@@ -2,29 +2,36 @@
 #define MENU_H
 
 #include <iostream>
+#include <string>
 using namespace std;
+
+// Funcion auxiliar para pedir una letra con mensaje simple
+char pedirLetra(string mensaje)
+{
+    char letra;
+    cout << "+---------------------------------------+" << endl;
+    cout << "|  " << mensaje << "  (S/N):  |" << endl;
+    cout << "+---------------------------------------+" << endl;
+    cout << "-> ";
+    cin >> letra;
+    return letra;
+}
 
 // Funcion para confirmar si el usuario quiere salir o seguir dentro del menu
 bool confirmarSalida()
 {
-    char letra;
-    cout << "+---------------------------------------+" << endl;
-    cout << "|  Quieres salir del programa? (S/N):   |" << endl;
-    cout << "+---------------------------------------+" << endl;
-    cout << "-> ";
-    cin >> letra;
-
+    char letra = pedirLetra("Quieres salir del programa?");
     if (letra == 'S' || letra == 's')
     {
         cout << "+---------------------------------------+" << endl;
-        cout << "|    Saliendo del programa... Chau!    |" << endl;
+        cout << "|     Saliendo de Enfrendados...        |" << endl;
         cout << "+---------------------------------------+" << endl;
         return true; // El usuario confirma que quiere salir
     }
     else if (letra == 'N' || letra == 'n')
     {
         cout << "+---------------------------------------+" << endl;
-        cout << "|   Perfecto. Seguimos en el menu.      |" << endl;
+        cout << "|No te preocupes seguimos en Enfrendados|" << endl;
         cout << "+---------------------------------------+" << endl;
         return false; // El usuario quiere quedarse
     }
@@ -33,8 +40,17 @@ bool confirmarSalida()
         cout << "+---------------------------------------+" << endl;
         cout << "|  Entrada invalida. Preciona 's' o 'n'.|" << endl;
         cout << "+---------------------------------------+" << endl;
-        return false; // Entrada invalida, se queda en el men
+        return false; // Entrada invalida, se queda en el menu
     }
+}
+
+// Funcion para mostrar titulo y mensaje de cada opcion
+void mostrarSeccion(const string titulo, const string mensaje)
+{
+    cout << "+=====================================+" << endl;
+    cout << "|------ " << titulo << " -------->" << endl;
+    cout << "+=====================================+" << endl;
+    cout << mensaje << endl;
 }
 
 #endif
