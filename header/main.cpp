@@ -27,7 +27,7 @@ int main()
         cout << "+=====================================+" << endl;
         cout << "|      MENU PRINCIPAL DEL JUEGO       |" << endl;
         cout << "|-------------------------------------|" << endl;
-        cout << "|   1) * Jugar                        |" << endl;
+        cout << "|   1) * Jugar con Tincho!!           |" << endl;
         cout << "|   2) * Estadisticas                 |" << endl;
         cout << "|   3) * Creditos                     |" << endl;
         cout << "|-------------------------------------|" << endl;
