@@ -6,14 +6,24 @@ using namespace std;
 
 int main()
 {
-    // Variable para guardar nombre del usuario
-    string nombre;
-    cout << "Ingrese su nombre: ";
-    getline(cin, nombre);
+    // Variable para guardar nombre del usuario + otro jugador
+    string jugador1, jugador2;
+    // Pantalla de bienvenida inicial con estilo
+    cout << "+=====================================+" << endl;
+    cout << "|         BIENVENIDO A ENFRENDADOS    |" << endl;
+    cout << "|           EL JUEGO DE DADOS         |" << endl;
+    cout << "+=====================================+" << endl;
+    cout << "|  Por favor, ingresa tu nombre para  |" << endl;
+    cout << "|           comenzar a jugar           |" << endl;
+    cout << "+-------------------------------------+" << endl;
+    cout << "-> ";
+    getline(cin, jugador1);
 
     // Variable para opcion de menu
     int opcionMenu;
     bool salir = false; // Inicializamos en False para cuando sea True Salga del menu
+    cout << endl;
+    cout << endl;
 
     cout << "   _______   ____________  _______   ______  ___ \t____  ____  _____\n";
     cout << "  / ____/ | / / ____/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/\n";
@@ -21,10 +31,12 @@ int main()
     cout << "/ /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /\n";
     cout << "/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/____//____/\n";
     cout << endl;
-    cout << "-----------------------------------------------------------------" << endl;
-    cout << "Bienvenido, " << nombre << "!" << endl;
-
-    system("pause");  // Pausa después de mostrar bienvenida
+    cout << endl;
+    cout << endl;
+    cout << "+---------------------------------------------------------------------------------------+" << endl;
+    cout << "| Bienvenido, " << jugador1 << " Preparate para tirar los dados y demostrar tu suerte.  |" << endl;
+    cout << "+---------------------------------------------------------------------------------------+" << endl;
+    system("pause"); // Pausa despues de mostrar bienvenida
 
     do
     {
@@ -32,11 +44,11 @@ int main()
         cout << "+=====================================+" << endl;
         cout << "|      MENU PRINCIPAL DEL JUEGO       |" << endl;
         cout << "|-------------------------------------|" << endl;
-        cout << "|   1) * Jugar con 2 jugadores        |" << endl;
-        cout << "|   2) * Estadisticas                 |" << endl;
-        cout << "|   3) * Creditos                     |" << endl;
+        cout << "|   1) --> Jugar con 2 jugadores      |" << endl;
+        cout << "|   2) --> Estadisticas               |" << endl;
+        cout << "|   3) --> Creditos                   |" << endl;
         cout << "|-------------------------------------|" << endl;
-        cout << "|   0) * Salir                        |" << endl;
+        cout << "|   0) --> Salir                      |" << endl;
         cout << "+=====================================+" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcionMenu;
@@ -47,23 +59,29 @@ int main()
         {
         case 1:
         {
-            mostrarSeccion("Enfrendados de a Dos!!!", "Has seleccionado jugar con 2 jugadores.\n");
+            mostrarSeccion("Enfrendados de a Dos", "Has seleccionado jugar con 2 jugadores.\n");
 
-            string jugador1, jugador2;
-
-            cout << "Ingrese el nombre del Jugador 1: ";
-            getline(cin, jugador1);
-            cout << "Ingrese el nombre del Jugador 2: ";
+            // Pedimos el nombre del jugador nro 2
+            cout << "+=====================================+" << endl;
+            cout << "|   INGRESE NOMBRE DEL JUGADOR 2      |" << endl;
+            cout << "+=====================================+" << endl;
+            cout << "-> ";
             getline(cin, jugador2);
 
-            cout << "\nJugadores listos para jugar:\n";
-            cout << "Jugador 1: " << jugador1 << endl;
-            cout << "Jugador 2: " << jugador2 << endl;
+            // Mostramos los jugadores
+            cout << "\n";
+            cout << "+=====================================+" << endl;
+            cout << "|      JUGADORES REGISTRADOS          |" << endl;
+            cout << "|-------------------------------------|" << endl;
+            cout << "--> Jugador 1: " << jugador1 << endl;
+            cout << "--> Jugador 2: " << jugador2 <<endl;
+            cout << "+=====================================+" << endl
+                 << endl;
 
-            system("pause");  // Pausa para que el usuario vea los nombres antes de continuar
-
+            system("pause"); // Pausa para que el usuario vea los nombres antes de continuar
+            // Aca va la funcion del compañero designado
             cout << "\nLOGICA DE MIS COMPAS A CODIFICAR!!!\n";
-            system("pause");  // Pausa antes de regresar al menú
+            system("pause"); // Pausa antes de regresar al menú
             break;
         }
         case 2:
@@ -77,12 +95,9 @@ int main()
             break;
         default:
             cout << "Opcion invalida. Intenta de nuevo." << endl;
-            system("pause");  // Pausa para que el usuario vea el mensaje de error
+            system("pause"); // Pausa para que el usuario vea el mensaje de error
         }
     } while (!salir);
 
     return 0;
 }
-
-
-

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Solo DECLARACIÓN de funciones (sin llaves, sin código)
+// Solo DECLARACIÓN de funciones
 char pedirLetra(string mensaje);
 bool confirmarSalida();
 void mostrarSeccion(string titulo, string mensaje);

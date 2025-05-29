@@ -28,7 +28,7 @@ bool confirmarSalida()
             cout << "|     Saliendo de Enfrendados...        |" << endl;
             cout << "+---------------------------------------+" << endl;
             system("pause");
-            return true; // Confirmo dos veces que quiere salir
+            return true; // Confirma dos veces que quiere salir
         }
         else
         {
@@ -36,7 +36,7 @@ bool confirmarSalida()
             cout << "|  Salida cancelada. Continuamos...     |" << endl;
             cout << "+---------------------------------------+" << endl;
             system("pause");
-            return false; // Cancelo en la segunda confirmación
+            return false; // Cancela en la segunda confirmación
         }
     }
     else if (letra == 'N' || letra == 'n')
