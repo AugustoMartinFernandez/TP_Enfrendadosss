@@ -6,30 +6,25 @@ using namespace std;
 
 int main()
 {
-    // Variable para guardar nombre del usuario + otro jugador
+    // Variable para guardar nombre del usuario1 y 2
     string jugador1, jugador2;
+    // Variable para opcion de menu
+    int opcionMenu;
+    bool salir = false; // Variable bandera para controlar el ciclo del menu cambia a true cuando el usuario decide salir
     // Pantalla de bienvenida inicial con estilo
     cout << "+=====================================+" << endl;
     cout << "|         BIENVENIDO A ENFRENDADOS    |" << endl;
     cout << "|           EL JUEGO DE DADOS         |" << endl;
     cout << "+=====================================+" << endl;
     cout << "|  Por favor, ingresa tu nombre para  |" << endl;
-    cout << "|           comenzar a jugar           |" << endl;
+    cout << "|           comenzar a jugar          |" << endl;
     cout << "+-------------------------------------+" << endl;
-    cout << "-> ";
-    getline(cin, jugador1);
-
-    // Variable para opcion de menu
-    int opcionMenu;
-    bool salir = false; // Inicializamos en False para cuando sea True Salga del menu
+    // Pedir nombre del jugador 1
+    jugador1 = pedirNombre("-> ");
     cout << endl;
     cout << endl;
-
-    cout << "   _______   ____________  _______   ______  ___ \t____  ____  _____\n";
-    cout << "  / ____/ | / / ____/ __ \\/ ____/ | / / __ \\/   |  / __ \\/ __ \\/ ___/\n";
-    cout << " / __/ /  |/ / /_  / /_/ / __/ /  |/ / / / / /| | / / / / / / /\\__ \\\n";
-    cout << "/ /___/ /|  / __/ / _, _/ /___/ /|  / /_/ / ___ |/ /_/ / /_/ /___/ /\n";
-    cout << "/_____/_/ |_/_/   /_/ |_/_____/_/ |_/_____/_/  |_/_____/____//____/\n";
+    // Imprimir el banner de bienvenida
+    imprimirBanner();
     cout << endl;
     cout << endl;
     cout << endl;
@@ -40,21 +35,9 @@ int main()
 
     do
     {
-        cout << endl;
-        cout << "+=====================================+" << endl;
-        cout << "|      MENU PRINCIPAL DEL JUEGO       |" << endl;
-        cout << "|-------------------------------------|" << endl;
-        cout << "|   1) --> Jugar con 2 jugadores      |" << endl;
-        cout << "|   2) --> Estadisticas               |" << endl;
-        cout << "|   3) --> Creditos                   |" << endl;
-        cout << "|-------------------------------------|" << endl;
-        cout << "|   0) --> Salir                      |" << endl;
-        cout << "+=====================================+" << endl;
-        cout << "Seleccione una opcion: ";
-        cin >> opcionMenu;
-        cin.ignore(); // Limpiar el buffer para que getline funcione correctamente
-        cout << "---------------------------------------------" << endl;
-
+        // Mostramos el menu y obtenemos opcion del usuario
+        opcionMenu = mostrarMenu();
+        // Ejecutamos la accion segun la opcion del menu
         switch (opcionMenu)
         {
         case 1:
@@ -65,8 +48,7 @@ int main()
             cout << "+=====================================+" << endl;
             cout << "|   INGRESE NOMBRE DEL JUGADOR 2      |" << endl;
             cout << "+=====================================+" << endl;
-            cout << "-> ";
-            getline(cin, jugador2);
+            jugador2 = pedirNombre("-> ");
 
             // Mostramos los jugadores
             cout << "\n";
@@ -74,21 +56,21 @@ int main()
             cout << "|      JUGADORES REGISTRADOS          |" << endl;
             cout << "|-------------------------------------|" << endl;
             cout << "--> Jugador 1: " << jugador1 << endl;
-            cout << "--> Jugador 2: " << jugador2 <<endl;
+            cout << "--> Jugador 2: " << jugador2 << endl;
             cout << "+=====================================+" << endl
                  << endl;
 
             system("pause"); // Pausa para que el usuario vea los nombres antes de continuar
             // Aca va la funcion del compañero designado
             cout << "\nLOGICA DE MIS COMPAS A CODIFICAR!!!\n";
-            system("pause"); // Pausa antes de regresar al menú
+            system("pause"); // Pausa antes de regresar al menu
             break;
         }
         case 2:
             mostrarSeccion("ESTADISTICAS", "Cargando estadisticas...\n");
             break;
         case 3:
-            mostrarSeccion("CREDITOS", "Creditos del juego...\n");
+            mostrarCreditos();
             break;
         case 0:
             salir = confirmarSalida();
@@ -97,6 +79,7 @@ int main()
             cout << "Opcion invalida. Intenta de nuevo." << endl;
             system("pause"); // Pausa para que el usuario vea el mensaje de error
         }
+        // Continuar mostrando el menu hasta que salir sea true
     } while (!salir);
 
     return 0;
