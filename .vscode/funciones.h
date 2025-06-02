@@ -42,5 +42,5 @@ void procesarResultado(
 void seleccionDeDados(int dadosStockJugador[], int& cantidadStock, 
     int dadosStockJugador2[], int& cantidadStock2, 
     int dadosElegidosJugador[], int& cantidadElegidosJugador, 
-    int puntosAcumulados[], int jugadorActual, int numeroObjetivo);
+    int puntosAcumulados[], int jugadorActual, int numeroObjetivo, int &suma);
 #endif

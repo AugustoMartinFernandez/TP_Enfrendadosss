@@ -277,12 +277,14 @@ void procesarResultado(
 // int cantidadStockJugador1 = contarDadosStock(dadosStockJugador1, 11);
 // int cantidadStockJugador2 = contarDadosStock(dadosStockJugador2, 11);
 // int numeroObjetivo = 9;
+// int suma =  0;
+
 
 // Jugador 1 comienza a elegir su turno
 // seleccionDeDados(dadosStockJugador1, cantidadStockJugador1, dadosStockJugador2, 
 // cantidadStockJugador2, dadosElegidosJugador1, cantidadElegidosJugador1, puntosAcumulados, 0, numeroObjetivo);
 
-void seleccionDeDados(int dadosStockJugador[], int &cantidadStock, int dadosStockJugador2[], int &cantidadStock2, int dadosElegidosJugador[], int &cantidadElegidosJugador, int puntosAcumulados[], int jugadorActual, int numeroObjetivo)
+void seleccionDeDados(int dadosStockJugador[], int &cantidadStock, int dadosStockJugador2[], int &cantidadStock2, int dadosElegidosJugador[], int &cantidadElegidosJugador, int puntosAcumulados[], int jugadorActual, int numeroObjetivo, int suma)
 {
   cout << "Tu numero objetivo es: " << numeroObjetivo << endl;
   cout << "Tus dados stock son: ";
@@ -297,7 +299,6 @@ void seleccionDeDados(int dadosStockJugador[], int &cantidadStock, int dadosStoc
   cin >> cantidadATomar;
 
   int indicesSeleccionados[11] = {};
-  int suma = 0;
 
   for (int i = 0; i < cantidadATomar; i++)
   {
